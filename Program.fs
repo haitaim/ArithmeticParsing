@@ -144,7 +144,7 @@ let constructTree input =
             | top :: next :: tail -> next, top, tail
             | _ ->
                 abort "Expression not well formed"
-                Leaf({ Lexeme = "0"; Value = 0.0 }), Leaf({ Lexeme = "0"; Value = 0.0 }), stack
+                stack.Head, stack.Head, stack
 
         let firstExpr, secondExpr, stackTop = extractLeaves stack
 
