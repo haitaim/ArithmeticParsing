@@ -175,9 +175,9 @@ let constructTree input =
                     expression
                 )
             loop tail (newExpression :: stackTop)
-        | [] -> stack.Head
+        | [] when stack.Length = 1 -> stack.Head
         | _ ->
-            abort "Program error"
+            abort "Expression not well formed"
             stack.Head
 
     loop input []
